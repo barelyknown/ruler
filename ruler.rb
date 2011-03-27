@@ -37,5 +37,3 @@ class Float
     ruler
   end
 end
-
-puts 142.37.to_f.to_ruler
