@@ -1,0 +1,17 @@
+This code extends the Float class to enable pretty formatting of floats into approximate ruler measurements through the to_ruler method.
+
+It automatically formats feet, inches, and fractions of an inch. The fractions are reduced using the largest common denominator with a maximum of 32nds of an inch.
+
+Here are some examples:
+
+this_number = 14.25
+puts this_number.to_ruler
+1' 2 1/4"
+
+that_number = 1
+puts that_number.to_f.to_ruler
+1"
+
+the_other_number = 142.37
+puts the_other_number.to_ruler
+11' 10 3/8"
