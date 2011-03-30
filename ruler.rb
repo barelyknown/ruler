@@ -1,12 +1,11 @@
 class Float
   attr_accessor :measurements
 
-  def to_ruler
+  def to_ruler(options={})
     # Converts a float into a string representing its approximate ruler equivalent if the float were inches
     
-    inches_base = 32 # This could be changed if you have a more or less precise ruler
+    inches_base = options[:base] || 32 # The :base options param enables you to change the base of the ruler from the deafult of 32
     self.measurements = {
-      :original => self,
       :feet => (self.floor/12).to_f.floor,
       :inches => (((self.floor.to_f/12.to_f) % 1)*12.to_f).round,
       :numerator => ((self % 1) * inches_base).round,
@@ -21,7 +20,6 @@ class Float
 
     # Format the measurements into a nicely formatted string
     ruler = ""
-    ruler << self.measurements[:original].to_s + "\n"
     if self.measurements[:feet] > 0
       ruler << self.measurements[:feet].to_s + "\'"
     end
