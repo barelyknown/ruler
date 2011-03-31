@@ -4,14 +4,14 @@ It automatically formats feet, inches, and fractions of an inch. The fractions a
 
 Here are some examples:
 
-this_number = 14.25
-puts this_number.to_ruler
+puts 14.25.to_ruler
 1' 2 1/4"
 
-that_number = 1
-puts that_number.to_f.to_ruler
+puts 1.to_f.to_ruler
 1"
 
-the_other_number = 142.37
-puts the_other_number.to_ruler
-11' 10 3/8"
+puts 132.48.to_ruler
+11' 15/32"
+
+puts 132.48.to_ruler(:base => 16)
+11' 1/2"
